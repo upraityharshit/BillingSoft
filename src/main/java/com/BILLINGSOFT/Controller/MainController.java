@@ -81,6 +81,9 @@ public class MainController{
     public void triggerRedirect(@RequestParam(value = "error", required = false) String error, HttpServletRequest request, HttpServletResponse response) throws IOException {
         // Construct the dynamic URL based on the context path
         String contextPath = request.getContextPath();
+        if (contextPath == "/") {
+            contextPath = null; // Fallback to empty string if context path is not set
+        }
         String redirectUrl = contextPath + "/login";
         if (error != null) {
             redirectUrl += "?error=" + error;

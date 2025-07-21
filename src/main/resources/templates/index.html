@@ -61,7 +61,7 @@
 			</div>
 
 			<div class="input-group mt-4 mb-1">
-				<label class="input-group-text"><i class="fa-solid fa-calendar-days"></i></label>
+				<span class="input-group-text"><i class="fa-solid fa-calendar-days"></i></span>
 				<select class="form-select" id="finyear" onchange="savefinyear()">
 					<option th:each="finyear: ${finyear}" th:value="${finyear.name}"
 						th:text="${finyear.name}"></option>

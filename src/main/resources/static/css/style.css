@@ -80,7 +80,8 @@ hr{
 .popup button{
 	margin-top: 10px;
 }
-.popup input,select{
+.popup input,
+.popup select{
 	margin-top: 20px;
 	color: black;
 }
@@ -194,6 +195,7 @@ table td .tick i{
 	color: black;
 	z-index: 9;
 }
+/*
 .bottomtotal{
 	width: 100%;
 	display: flex;
@@ -258,7 +260,7 @@ table td .tick i{
 	width: 65%;
 	height: 30px;
 	color: #5f6415;
-}
+} */
 #toggle1,#toggle2,#toggle3{
 	visibility: hidden;
 }

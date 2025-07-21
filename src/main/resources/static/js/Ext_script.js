@@ -1,7 +1,7 @@
 // Get the context path from the meta tag
 var contextPath = document.querySelector('meta[name="context-path"]').getAttribute('content');
 
-if(contextPath == "/")
+if(contextPath == null || contextPath == undefined || contextPath == "")
 	contextPath = "";
 
 //get the menus by selecting menugroup
