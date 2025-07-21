@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:insert="~{base :: layout(~{::section})}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section>
+      <div class="wrapper_center">
+        <div class="wrapper">
+            <div id="mydiv" th:if="${session.message}" class="alert"
+                  th:classappend="${session.message.type}" role="alert"
+                  th:text="${session.message.content}"></div>
+               <th:block th:text="${@sessionHelper.removeMessage()}"></th:block>
+            <div class="form-container">
+
+            <div class="title-text">
+               <div class="title create">Create User</div>
+               <div class="title edit">Edit User</div>
+            </div>
+
+            <div class="slide-controls">
+               <input type="radio" name="slide" id="create" checked>
+               <input type="radio" name="slide" id="edit">
+               <label for="create" class="slide create">Create</label>
+               <label for="edit" class="slide edit">Edit</label>
+               <div class="slider-tab"></div>
+            </div>
+
+            <!-- Create User Form -->
+            <div class="form-inner">      
+               <form th:action="@{/dashboard/user_register}" th:object="${user}" method="post" class="create">
+                  <div class="field">
+                     <input type="text" name="username" id="username" placeholder="Username"
+                        th:value="${user.username}"  th:field="*{username}" 
+                        th:classappend="${#fields.hasErrors('username')? 'is-invalid':''}" required>
+
+                        <div th:each="e:${#fields.errors('username')}" th:text="${e}"
+                        class="invalid-feedback"></div>
+                  </div>
+                  <div class="field">
+                     <input type="text" name="name" id="name" placeholder="Name"
+                        th:value="${user.name}"  th:field="*{name}" 
+                        th:classappend="${#fields.hasErrors('name')? 'is-invalid':''}" required>
+
+                     <div th:each="e:${#fields.errors('name')}" th:text="${e}"
+                        class="invalid-feedback"></div>
+                  </div>
+                  <div class="field">
+                     <input type="password" name="password" id="password" placeholder="Enter Password"
+                        th:field="*{password}" th:value="${user.password}"
+                        th:classappend="${#fields.hasErrors('password')? 'is-invalid':''}" required>
+
+                     <div th:each="e:${#fields.errors('password')}" th:text="${e}"
+                        class="invalid-feedback"></div>
+                  </div>
+                  <div class="field">
+                     <input type="password" name="cpass" id="cpassword" placeholder="Enter Confirm Password" required>
+                  </div>
+                  
+                  <div class="field btn">
+                  <div class="btn-layer"></div>
+                  <input type="submit" value="Save">
+                  </div>
+               </form>
+
+               <!-- Edit User Form -->
+               <form th:action="@{/dashboard/user/edit_user}" th:object="${edit_user}" method="post" class="edit">
+                  
+                  <select class="field" id="usersoptions" name="username" onchange="getusers()" required>
+                     <option value="select" selected disabled>Select Username *</option>
+                     <option th:each="users: ${allusers}" th:value="${users.username}" th:text="${users.username}"></option>
+                  </select> 
+
+                  <div class="field">
+                     <input type="text" name="name" id="name2" placeholder="Name"
+                     th:value="${user.name}"  th:field="*{name}" 
+                     th:classappend="${#fields.hasErrors('name')? 'is-invalid':''}" required>
+
+                     <div th:each="e:${#fields.errors('name')}" th:text="${e}"
+                     class="invalid-feedback"></div>
+                  </div>
+
+                  <div class="field">
+                     <input type="password" name="password" id="password2" th:field="*{password}"
+                     th:value="${user.password}" placeholder="Password"
+                     th:classappend="${#fields.hasErrors('password')? 'is-invalid':''}" required>
+
+                     <div th:each="e:${#fields.errors('password')}" th:text="${e}"
+                        class="invalid-feedback"></div>
+                  </div>
+
+                  <div class="field">
+                      <input type="password" name="cpass" id="cpassword2" placeholder="Confirm Password" required>
+                  </div>
+
+                  <div class="form-check" style="margin: 10px 0 0 0;">
+                     <input class="form-check-input" type="checkbox" name="islocked" id="islocked">
+                     <label class="form-check-label" for="islocked">Locked</label>
+                  </div>
+
+                  <div class="field btn" style="margin: 0 0 5px 0">
+                     <div class="btn-layer"></div>
+                     <input type="submit" value="Save">
+                  </div>
+               </form>
+            </div>
+          </div>
+         </div>
+      </div>
+    </section>
+</body>
+</html>

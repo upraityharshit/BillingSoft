@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+.heading{
+    text-align: center;
+    font-size: 60px;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    background: -webkit-linear-gradient(right, #112627, #634870, #313894, #ecf016);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.container1{
+    width: 97vw;
+    height: auto;
+}
+.container1 .menugroup{
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    border: 4px inset rgba(179, 231, 179, 0.788);
+    border-radius: 20px;
+    padding: 20px;
+    margin: 10px;
+}
+.container1 .menugroup div{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: 10px 5px;
+}
+.container1 .menugroup label{
+    margin-right: 5px;
+    font-weight: bold;
+    font-family: 'Times New Roman';
+    font-size: 18px;
+    color: rgb(38, 51, 59);
+}
+.container1 .menugroup select{
+    width: 300px;
+    float: inline-start;
+    border-radius: 10px;
+    background-color: rgba(245, 255, 246, 0.836);
+    margin-top: 3px;
+}
+.container1 .permission{
+    justify-content: space-evenly;
+    text-align: left;
+    border: 4px inset rgba(206, 241, 214, 0.788);
+    border-radius: 20px;
+    padding: 5px;
+    margin-top: 20px;
+    height: auto;
+    background-color: linear-gradient(115deg, #F1F1FF , #b3f3b7);
+}
+.permission h5{
+    margin-left: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+.permission table{
+    border-radius: 20px;
+}
+.permission table input{
+    border: 1px rgb(92, 78, 78) solid;
+}
+.disp{
+    display: none;
+}
+.cntr{
+    text-align: center;
+}
+@media only screen and (max-width: 600px){
+    .container1 .menugroup select{
+        width: 150px;
+    }
+}

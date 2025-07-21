@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login Page</title>
+
+  <meta th:name="context-path" th:content="${contextPath}">
+
+<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+<link rel="stylesheet" th:href="@{/css/fontawesome.css}">
+<link rel="stylesheet" th:href="@{/css/all.min.css}">
+<link rel="stylesheet" th:href="@{/css/login.css}">
+<link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+  <div class="container">
+	<div class="container-circle">
+		<!-- Bubble circles left-->
+		<div class="bubble circle-center"></div>
+		<div class="bubble circle-bottom-left"></div>
+
+		<!-- Bubble circles right-->
+		<div class="bubble circle-center-right"></div>
+		<div class="bubble circle-bottom-right"></div>
+
+		<div class="left-panel">
+			<!-- Welcome Text -->
+			<div class="text-content">
+				<h2>WELCOME</h2>
+				<p>YOUR HEADLINE NAME</p>
+			</div>
+		</div>
+	
+		<div class="right-panel">
+		<h2>SIGN IN</h2>
+		<form th:action="@{/do_login}" method="post">
+
+			<div th:if="${param.logout}" style="font-size: 13px"
+				class="alert alert-danger justify-content-center">Logout
+				Successfull!!
+			</div>
+
+			<div th:if="${param.error}" style="font-size: 13px"
+				class="alert alert-danger justify-content-center">
+				<span th:text="${param.error}"></span>
+			</div>
+			
+			<div class="input-group mt-1">
+				<span class="input-group-text" id="basic-addon1">
+					<i class="fa-solid fa-user"></i>
+				</span>
+				<input type="text" class="form-control" placeholder="Username" name="username" id="username" aria-label="Username" aria-describedby="basic-addon1">
+			</div>
+
+			<div class="input-group mt-4">
+				<span class="input-group-text" id="basic-addon1">
+					<i class="fa-solid fa-key"></i>
+				</span>
+				<input type="password" class="form-control" placeholder="Password" name="password" aria-label="password" aria-describedby="basic-addon1">
+			</div>
+
+			<div class="input-group mt-4 mb-1">
+				<label class="input-group-text"><i class="fa-solid fa-calendar-days"></i></label>
+				<select class="form-select" id="finyear" onchange="savefinyear()">
+					<option th:each="finyear: ${finyear}" th:value="${finyear.name}"
+						th:text="${finyear.name}"></option>
+				</select>
+			</div>
+			
+			<button type="submit" class="btn mt-4">Sign in</button>
+		</form>
+		</div>
+	</div>
+  </div>
+  	<footer>
+       Developed & Design by WEB ERA NETWORK
+    </footer>
+  <script src="js/loginscript.js"></script>
+</body>
+</html>

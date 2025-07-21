@@ -1,0 +1,345 @@
+body {
+	min-height: 100vh;
+	padding: 10px;
+	font-family: 'Poppins', sans-serif;
+	background: linear-gradient(115deg, #F1F1FF , #ffffff);
+}
+section{
+	margin-top: 120px;
+}
+/* Item Master form CSS code start */
+.container2{
+	height: 65vh;
+    width: 100%;
+	padding: 10px;
+}
+.container2 .overlap{
+	height: 65vh;
+	overflow: auto;
+	box-sizing: border-box;
+}
+.container2 table thead{
+	justify-content: center;
+	text-align: center;
+}
+.container2 table th{
+	position: sticky;
+	top: 0;
+	margin-bottom: 50px;
+	font-size: 15px;
+	background-color: linear-gradient(115deg, #F1F1FF , #ffffff);
+}
+.container2 table td{
+	justify-content: center;
+	text-align: center;
+	font-size: 14px;
+	
+}
+.container2 h5{
+	text-align: center;
+	margin-top: -10px;
+	font-family: 'Courier New', Courier, monospace;
+	font-weight: bold;
+	letter-spacing: 5px;
+}
+.act{
+	text-align: center;
+}
+hr{
+    margin: 0 0 5px 0;
+}
+/*Popup window for save new */
+.popup{
+	width: 400px;
+	height: auto;
+	color: black;
+	border: 5px groove gray;
+	border-radius: 20px;
+	font-family: 'Courier New', Courier, monospace;
+	position: absolute;
+	top: -100px;
+	left: 30%;
+	font-weight: bold;
+	background: linear-gradient(115deg, #ecf3f7, #6AB187);
+	padding: 5px 20px;
+	text-align: center;
+	justify-content: center;
+	visibility: hidden;
+	transform: scale(0.1);
+	transition: transform 0.5s;
+	z-index: 9999999999;
+}
+.popup a{
+	width: 25px;
+	height: 25px;
+	float: right;
+	margin-top: -5px;
+	font-size: 25px;
+	color: black;
+}
+.popup button{
+	margin-top: 10px;
+}
+.popup input,select{
+	margin-top: 20px;
+	color: black;
+}
+/* Item Master form CSS code end */
+.popup1{
+	width: 500px;
+	height: auto;
+	color: black;
+	border: 5px groove gray;
+	border-radius: 20px;
+	font-family: 'Courier New', Courier, monospace;
+	position: absolute;
+	top: -100px;
+	left: 30%;
+	font-weight: bold;
+	background: linear-gradient(115deg, #4CB5F5, #6AB187);
+	padding: 5px 15px;
+	visibility: hidden;
+	text-align: center;
+	transform: scale(0.1);
+	transition: transform 0.5s;
+	z-index: 99999;
+}
+.popup1 .button{
+	text-align: center;
+}
+.popup1 h3{
+	text-align: center;
+	margin-top: -10px;
+}
+.popup1 .cross{
+	text-align: end;
+}
+/* Estimate page style */
+.container3{
+	height: 77vh;
+    width: 100%;
+	padding: 10px;
+}
+.container3 h5{
+	text-align: center;
+	margin-top: -15px;
+	font-family: 'Courier New', Courier, monospace;
+	font-weight: bold;
+	letter-spacing: 5px;
+	color: #20283E;
+}
+.container3 form{
+	margin-left: 10px;
+}
+.container3 form div div input,
+.container3 form div div textarea{
+	border: 2px solid grey;
+	border-radius: 10px;
+}
+.container3 form .savebtn{
+	margin: 5px;
+	margin-top: 25px; 
+	letter-spacing: 3px;
+	text-align: center;
+}
+.container3 form .savebtn button{
+	font-weight: bold;
+	width: 100px;
+}
+.container3 form label{
+	font-weight: bold;
+	font-size: 10px;
+}
+.container3 form input{
+	font-size: 13px;
+}
+.container3 .overlap{
+	height: auto;
+	overflow: auto;
+	box-sizing: border-box;
+	max-height: 28vh;
+}
+.container3 table th{
+	position: sticky;
+	top: 0;
+}
+.container3 table td{
+	font-size: 12px;
+}
+table td .tick i{
+	margin: 8px 0 0 0;
+	color: green;
+}
+.search-result{
+	position: absolute;
+	display: none;
+	border: 2px solid grey;
+	border-radius: 10px;
+	color: black;
+	z-index: 9;
+}
+.search-result1{
+	position: absolute;
+	display: none;
+	border: 2px solid grey;
+	border-radius: 10px;
+	color: black;
+	z-index: 9;
+}
+.search-result2{
+	position: absolute;
+	display: none;
+	border: 2px solid grey;
+	border-radius: 10px;
+	color: black;
+	z-index: 9;
+}
+.bottomtotal{
+	width: 100%;
+	display: flex;
+	text-align: center;
+	justify-content: space-between;	
+	color: #20283E;
+}
+.bottomtotal .left div,
+.bottomtotal .right div{
+	margin-top: 10px;
+	width: 100%;
+	display: flex;
+	text-align: left;
+	flex-wrap: wrap;
+}
+.bottomtotal div{
+	width: 50%;
+	font-weight: bold;
+}
+.bottomtotal .left div span{
+	width: 30%;
+}
+.bottomtotal .left div input{
+	margin-left: 20px;
+	border-radius: 10px;
+	padding-left: 5px;
+}
+.bottomtotal .right div .left{
+	width: 40%;
+}
+.bottomtotal .right div .right{
+	width: 150px;
+	height: 30px;
+	margin-left: 20px;
+	text-align: center;
+	border: 2px inset gray;
+	border-radius: 20px;
+	color: #20283E;
+}
+.bottomtotal1{
+	width: 100%;
+	display: flex;
+	text-align: center;
+	justify-content: space-around;	
+	color: #20283E;
+}
+.bottomtotal1 .right div{
+	margin-top: 10px;
+	width: 100%;
+	display: flex;
+	text-align: left;
+	flex-wrap: wrap;
+}
+.bottomtotal1 div{
+	width: 100%;
+	font-weight: bold;
+}
+.bottomtotal1 .right div .left{
+	width: 30%;
+}
+.bottomtotal1 .right div .right{
+	width: 65%;
+	height: 30px;
+	color: #5f6415;
+}
+#toggle1,#toggle2,#toggle3{
+	visibility: hidden;
+}
+form .check{
+	margin-top: -30px;
+}
+.estimateReport h5 {
+	text-align: center;
+	font-family: 'Courier New', Courier, monospace;
+	font-weight: bold;
+	letter-spacing: 5px;
+}
+.estimateReport .report{
+	border: 5px groove rgb(160, 214, 196);
+	margin: 20px 50px;
+	padding: 10px 50px 20px 100px;
+	align-items: center;
+	justify-content: center;
+}
+.estimateReport .report div div div,
+.estimateReport .report div div input,
+.estimateReport .report div div select{
+	border: 2px groove black;
+	border-radius: 10px;
+	font-family: 'Courier New', Courier, monospace;
+	font-weight: bold;
+}
+.estimateReport .report div div select{
+	width: 100px;
+}
+.estimateReport .go{
+	margin-left: 20px;
+	margin-top: 20px;
+	font-size: 35px;
+}
+.deliverySlip div div div{
+	font-size: 17px;
+}
+.deliverySlip div span{
+	margin-right: 20px;
+}
+footer{
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	height: 20px;
+	width: 100%;
+	text-align: center;
+	justify-content: center;
+	font-weight: bold;
+	font-size: 12px;
+	background: linear-gradient(115deg, #e3f2fc, #6AB187);
+}
+
+/* Mobile Screen */
+@media only screen and (max-width: 960px){
+	.container3 form label{
+		font-size: 10px;
+		font-weight: bold;
+	}
+	form .check{
+		margin-top: 0;
+	}
+	.estimateReport .report{
+		border: 5px groove rgb(181, 181, 211);
+		padding: 10px 10px;
+	}
+	.estimateReport .go{
+		margin-left: 50px;
+		margin-top: 10px;
+		font-size: 35px;
+	}
+}
+@media only screen and (max-width: 500px){
+	.bottomtotal{
+		display: block;
+	}
+	.bottomtotal .left{
+		width: 100%;
+	}
+	.bottomtotal .right{
+		width: 100%;
+	}
+}

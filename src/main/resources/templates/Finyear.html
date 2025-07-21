@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:insert="~{base :: layout(~{::section})}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section>
+        <div class="container2">
+            <h5>FINANCIAL YEAR MASTER</h5><hr>
+            <div id="messagediv" th:if="${session.message}" class="alert"
+                th:classappend="${session.message.type}" role="alert"
+                th:text="${session.message.content}"></div>
+            <th:block th:text="${@sessionHelper.removeMessage()}"></th:block>
+
+            <div>
+                <button class="btn btn-primary" onclick="openPopup()" th:if="${finyearperm!=null and finyearperm.create}"><i class="fa-solid fa-folder-plus"></i> ADD FINYEAR</button>
+                <div>
+                    <table class="table table-bordered border-info mt-2">
+                        <thead style="text-align: center;">
+                            <th class="rightbor">S.NO</th>
+                            <th class="rightbor">NAME</th>
+                            <th class="rightbor">FROM DATE</th>
+                            <th class="rightbor">TO DATE</th>
+                            <th class="rightbor">IS CURRENT</th>
+                            <th class="rightbor">IS ACTIVE</th>
+                            <th class="act">ACTION</th>
+                        </thead>
+                            <tr th:each="finyear,sno : ${finyears}" class="table-info">
+                                <td th:text="${sno.index+1}"></td>
+                                <td th:text="${finyear.name}"></td>
+                                <td th:text="${#dates.format(finyear.fromdate, 'dd/MM/yyyy')}"></td>
+                                <td th:text="${#dates.format(finyear.todate, 'dd/MM/yyyy')}"></td>
+                                <td th:text="${finyear.current} ? 'YES' : 'NO'"></td>
+                                <td th:text="${finyear.active} ? 'YES' : 'NO'"></td>
+
+                                <td class="act">
+                                    <a href="#" th:if="${finyearperm!=null and finyearperm.edit}" th:onclick="editfinyear(/*[[${finyear.id}]]*/,/*[[${finyear.name}]]*/,/*[[${finyear.fromdate}]]*/,/*[[${finyear.todate}]]*/,/*[[${finyear.current}]]*/,/*[[${finyear.active}]]*/)"><i class="fa-solid fa-pen-to-square" style="color: green;" title="Edit"></i></a>
+                                    
+                                    <a href="#" th:if="${finyearperm!=null and finyearperm.delete}" th:onclick="deletefinyear(/*[[${finyear.id}]]*/)"><i class="fa-solid fa-trash" style="margin-left: 20px; color: red;" title="Delete"></i></a>
+                                </td>
+
+                            </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="popup1" id="popup1">
+                <div class="cross"><a href="" onclick="closePopup()"><i class="fa-solid fa-circle-xmark"></i></a>
+                </div>
+
+                    <div id="mydiv" th:if="${session.message}" class="alert"
+                    th:classappend="${session.message.type}" role="alert"
+                    th:text="${session.message.content}"></div>
+                    <th:block th:text="${@sessionHelper.removeMessage()}"></th:block>
+
+                <h3 id="heading"><u>ADD FINANCIAL YEAR</u></h3>
+
+                <form th:action="@{/dashboard/save_finyear}" th:object="${newfinyear}" method="Post">
+
+                    <input type="hidden" id="status" name="status" value="new">
+                    <input type="hidden" id="finid" name="finid">
+                    
+                    <div class="input-group" style="margin: 20px 0;">
+                        <div class="form-floating">
+                            <input type="text" name="name" class="form-control" id="name" oninput="toUppercase(this)"
+                                th:field="*{name}" th:value="${newfinyear.name}" placeholder="Enter Name" 
+                                th:classappend="${#fields.hasErrors('name')? 'is-invalid':''}"/>
+                            <label for="name" style="text-align: center;">Enter Name*</label>
+                        </div>
+                    </div>
+                <div class="row g-2" style="margin-top: 20px;">
+                    <div class="col">
+                        <div class="form-floating">
+                            <input type="Date" name="fromdate" class="form-control" id="fromdate" onchange="todatepicker()"
+                                th:field="*{fromdate}" th:value="${newfinyear.fromdate}" placeholder="Enter From Date" th:classappend="${#fields.hasErrors('fromdate')? 'is-invalid':''}" required/>
+                            <label for="fromdate" style="color: black;">Select From Date*</label>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="form-floating">
+                            <input type="Date" name="todate" class="form-control" id="todate" 
+                                th:field="*{todate}" th:value="${newfinyear.todate}" placeholder="Enter To Date" th:classappend="${#fields.hasErrors('todate')? 'is-invalid':''}" required/>
+                            <label for="todate" style="color: black;">Select To Date*</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row g-2" style="margin: 20px 20px; color: black; text-align: start;">
+                    <div class="col">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="current" id="current">
+                            <label class="form-check-label" for="current">
+                            is Current
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="active" id="active" checked>
+                            <label class="form-check-label" for="active">
+                            is Active
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                    <div class="button">
+                        <button type="submit" class="btn btn-primary" id="save" 
+                        style="margin: 10px 0 10px -20px; width: 100px;"> Save </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

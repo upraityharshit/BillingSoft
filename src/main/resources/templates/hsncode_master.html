@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:insert="~{base :: layout(~{::section})}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section>
+        <div class="container2">
+            <h5>HSNCODE MASTER</h5><hr>
+            <div id="messagediv" th:if="${session.message}" class="alert"
+                th:classappend="${session.message.type}" role="alert"
+                th:text="${session.message.content}"></div>
+            <th:block th:text="${@sessionHelper.removeMessage()}"></th:block>
+
+            <div>
+                <button class="btn btn-primary" onclick="openPopup()" th:if="${hsncodeperm!=null and hsncodeperm.create}"><i class="fa-solid fa-folder-plus"></i> ADD HSNCODE</button>
+                <div class="overlap">
+                    <table class="table table-bordered border-info mt-2">
+                        <thead style="text-align: center;">
+                            <th class="rightbor">S.No</th>
+                            <th class="rightbor">HSN CODE</th>
+                            <th class="rightbor">GST</th>
+                            <th class="rightbor">DESCRIPTION</th>
+                            <th class="act">ACTION</th>
+                        </thead>
+                            <tr th:each="hsncode,sno : ${hsncode}" class="table-info">
+                                <td style="width: 150px;" th:text="${sno.index+1}"></td>
+                                <td th:text="${hsncode.hsncode}"></td>
+                                <td th:text="${hsncode.gst}"></td>
+                                <td style="width: 450px; padding: 4px;" th:text="${hsncode.description}"></td>
+
+                                <td class="act">
+                                    <a href="#" th:if="${hsncodeperm!=null and hsncodeperm.edit}" th:onclick="edithsncode(/*[[${hsncode.id}]]*/,/*[[${hsncode.hsncode}]]*/,/*[[${hsncode.gst}]]*/,/*[[${hsncode.description}]]*/)"><i class="fa-solid fa-pen-to-square" style="color: green;" title="Edit"></i></a>
+                                    <a href="#" th:if="${hsncodeperm!=null and hsncodeperm.delete}" th:onclick="deleteHsncode(/*[[${hsncode.id}]]*/,/*[[${hsncode.hsncode}]]*/)"><i class="fa-solid fa-trash" style="margin-left: 20px; color: red;" title="Delete"></i></a>
+                                </td>
+
+                            </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="popup" id="popup">
+                <div class="cross"><a href="" onclick="closePopup()"><i class="fa-solid fa-circle-xmark"></i></a></div>
+
+                    <div id="mydiv" th:if="${session.message}" class="alert"
+                    th:classappend="${session.message.type}" role="alert"
+                    th:text="${session.message.content}"></div>
+                <th:block th:text="${@sessionHelper.removeMessage()}"></th:block>
+
+                <h3 id="heading"><u>ADD HSN CODE</u></h3>
+
+                <form th:action="@{/dashboard/save_hsncode}" th:object="${newhsncode}" method="Post">
+
+                    <input type="hidden" id="status" name="status" value="new">
+                    <input type="hidden" id="hsnid1" name="hsnid1">
+                    
+                    <div class="input-group">
+                        <div class="form-floating">
+                            <input type="text" name="hsncode" class="form-control" id="floatingInputGroup1" oninput="toUppercase(this)" 
+                                th:field="*{hsncode}" th:value="${newhsncode.hsncode}" placeholder="Enter HSN Code" th:classappend="${#fields.hasErrors('hsncode')? 'is-invalid':''}"/>
+                            <label for="floatingInputGroup1">Enter HSN Code</label>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <div class="form-floating">
+                            <input type="number" name="gst" class="form-control" id="floatingInputGroup2" 
+                                th:field="*{gst}" th:value="${newhsncode.gst}" placeholder="Enter GST % " 
+                                th:classappend="${#fields.hasErrors('gst')? 'is-invalid':''}"/>
+                            <label for="floatingInputGroup2">Enter GST %</label>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <div class="form-floating">
+                            <input type="text" name="description" class="form-control" id="floatingInputGroup3" 
+                                th:field="*{description}" th:value="${newhsncode.description}" placeholder="Enter Description"/>
+                            <label for="floatingInputGroup3">Enter Description</label>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" id="save"> Save </button>
+                </form>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
