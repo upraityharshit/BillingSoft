@@ -40,7 +40,7 @@ public class UserController {
     	model.addAttribute("allusers", allUser);
     	model.addAttribute("edit_user", new User());
 
-        return "create_user";
+        return "User/create_user";
     }
     
     // @GetMapping("/edit_user")

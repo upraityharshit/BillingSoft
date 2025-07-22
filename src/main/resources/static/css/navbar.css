@@ -1,10 +1,11 @@
 nav{
-    background: linear-gradient(115deg, #80aab4, #6AB187);
+    background: linear-gradient(115deg, #9bb3b9, #6AB187);
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 nav .nav-item a{
   color: white;
   font-weight: bold;
+  font-size: 14px;
   letter-spacing: 1px;
 }
 nav .dropdown-item{

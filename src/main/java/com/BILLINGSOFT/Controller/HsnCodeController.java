@@ -43,7 +43,7 @@ public class HsnCodeController {
         model.addAttribute("hsncode",hsncode);
 		model.addAttribute("newhsncode", new HsnCode());
 
-        return "hsncode_master";
+        return "Masters/hsncode_master";
     }
 
     @PostMapping("/save_hsncode")
@@ -119,6 +119,6 @@ public class HsnCodeController {
         model.addAttribute("hsncode",hsncode1);
         model.addAttribute("newhsncode", hsncode);
 
-        return "hsncode_master";
+        return "Masters/hsncode_master";
     }
 }

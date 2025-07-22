@@ -44,7 +44,7 @@ public class FinyearController {
         model.addAttribute("finyears",finyear);
 		model.addAttribute("newfinyear", new Finyear());
 
-        return "Finyear";
+        return "Masters/Finyear";
     }
 
     @PostMapping("/save_finyear")
@@ -112,6 +112,6 @@ public class FinyearController {
         List<Finyear> finyears = this.finyearRepo.findAllOrderByFinid();
         model.addAttribute("finyears",finyears);
         
-        return "Finyear";
+        return "Masters/Finyear";
     }
 }

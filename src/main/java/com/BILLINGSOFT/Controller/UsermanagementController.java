@@ -53,7 +53,7 @@ public class UsermanagementController {
         model.addAttribute("menugroups", menugroups);
         //model.addAttribute("permission", perm);
 
-        return "user_management";
+        return "User/user_management";
     }
 
 
