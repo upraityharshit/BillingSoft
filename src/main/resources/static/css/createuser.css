@@ -12,6 +12,7 @@
   border-radius: 15px;
   box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.5);
   background: linear-gradient(135deg, #e0f7fa, #9fd4b4);
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 .wrapper .title-text {
   display: flex;
@@ -21,7 +22,7 @@
 .wrapper .title {
   width: 50%;
   font-size: 35px;
-  font-weight: 600;
+  font-weight: bold;
   text-align: center;
   transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
@@ -40,7 +41,7 @@
   height: 100%;
   width: 100%;
   font-size: 18px;
-  font-weight: 500;
+  font-weight: bold;
   text-align: center;
   line-height: 48px;
   cursor: pointer;

@@ -1,7 +1,7 @@
 body {
 	min-height: 100vh;
 	padding: 10px;
-	font-family: 'Poppins', sans-serif;
+	font-family: Georgia, 'Times New Roman', Times, serif;
 	background: linear-gradient(115deg, #F1F1FF , #ffffff);
 }
 section{
@@ -33,12 +33,12 @@ section{
 	justify-content: center;
 	text-align: center;
 	font-size: 14px;
-	
+	background-color: #e7f3ec;
 }
 .container2 h5{
 	text-align: center;
 	margin-top: -10px;
-	font-family: 'Courier New', Courier, monospace;
+	font-family: Georgia, 'Times New Roman', Times, serif;
 	font-weight: bold;
 	letter-spacing: 5px;
 }
@@ -50,18 +50,18 @@ hr{
 }
 /*Popup window for save new */
 .popup{
-	width: 400px;
+	width: 500px;
 	height: auto;
 	color: black;
 	border: 5px groove gray;
 	border-radius: 20px;
-	font-family: 'Courier New', Courier, monospace;
+	font-family: Georgia, 'Times New Roman', Times, serif;
 	position: absolute;
 	top: -100px;
 	left: 30%;
 	font-weight: bold;
-	background: linear-gradient(115deg, #ecf3f7, #6AB187);
-	padding: 5px 20px;
+	background: linear-gradient(115deg, #c4c8c9f3, #8ad3b7e5);
+	padding: 20px;
 	text-align: center;
 	justify-content: center;
 	visibility: hidden;
@@ -77,6 +77,10 @@ hr{
 	font-size: 25px;
 	color: black;
 }
+.popup h3{
+	font-weight: bold;
+	font-family: Georgia, 'Times New Roman', Times, serif;
+}
 .popup button{
 	margin-top: 10px;
 }
@@ -85,20 +89,20 @@ hr{
 	margin-top: 20px;
 	color: black;
 }
-/* Item Master form CSS code end */
+/* Item Master form CSS code end
 .popup1{
 	width: 500px;
 	height: auto;
 	color: black;
 	border: 5px groove gray;
 	border-radius: 20px;
-	font-family: 'Courier New', Courier, monospace;
+	font-family: Georgia, 'Times New Roman', Times, serif;
 	position: absolute;
 	top: -100px;
 	left: 30%;
 	font-weight: bold;
-	background: linear-gradient(115deg, #4CB5F5, #6AB187);
-	padding: 5px 15px;
+	background: linear-gradient(115deg, #c4c8c9f3, #8ad3b7e5);
+	padding: 20px;
 	visibility: hidden;
 	text-align: center;
 	transform: scale(0.1);
@@ -111,10 +115,12 @@ hr{
 .popup1 h3{
 	text-align: center;
 	margin-top: -10px;
+	font-weight: bold;
+	font-family: Georgia, 'Times New Roman', Times, serif;
 }
 .popup1 .cross{
 	text-align: end;
-}
+} */
 /* Estimate page style */
 .container3{
 	height: 77vh;
@@ -124,7 +130,7 @@ hr{
 .container3 h5{
 	text-align: center;
 	margin-top: -15px;
-	font-family: 'Courier New', Courier, monospace;
+	font-family: Georgia, 'Times New Roman', Times, serif;
 	font-weight: bold;
 	letter-spacing: 5px;
 	color: #20283E;
@@ -269,7 +275,7 @@ form .check{
 }
 .estimateReport h5 {
 	text-align: center;
-	font-family: 'Courier New', Courier, monospace;
+	font-family: Georgia, 'Times New Roman', Times, serif;
 	font-weight: bold;
 	letter-spacing: 5px;
 }
@@ -285,7 +291,7 @@ form .check{
 .estimateReport .report div div select{
 	border: 2px groove black;
 	border-radius: 10px;
-	font-family: 'Courier New', Courier, monospace;
+	font-family: Georgia, 'Times New Roman', Times, serif;
 	font-weight: bold;
 }
 .estimateReport .report div div select{
@@ -312,6 +318,7 @@ footer{
 	justify-content: center;
 	font-weight: bold;
 	font-size: 12px;
+	font-family: Georgia, 'Times New Roman', Times, serif;
 	background: linear-gradient(115deg, #e3f2fc, #6AB187);
 }
 

@@ -15,7 +15,7 @@
             <th:block th:text="${@sessionHelper.removeMessage()}"></th:block>
 
             <div>
-                <button class="btn btn-primary" onclick="openPopup()" th:if="${hsncodeperm!=null and hsncodeperm.create}"><i class="fa-solid fa-folder-plus"></i> ADD HSNCODE</button>
+                <button class="btn btn-outline-dark" onclick="openPopup()" th:if="${hsncodeperm!=null and hsncodeperm.create}"><i class="fa-solid fa-folder-plus"></i> ADD HSNCODE</button>
                 <div class="overlap">
                     <table class="table table-bordered border-info mt-2">
                         <thead style="text-align: center;">
@@ -28,7 +28,7 @@
                             <tr th:each="hsncode,sno : ${hsncode}" class="table-info">
                                 <td style="width: 150px;" th:text="${sno.index+1}"></td>
                                 <td th:text="${hsncode.hsncode}"></td>
-                                <td th:text="${hsncode.gst}"></td>
+                                <td th:text="${hsncode.gst  + '%'}"></td>
                                 <td style="width: 450px; padding: 4px;" th:text="${hsncode.description}"></td>
 
                                 <td class="act">
@@ -80,7 +80,7 @@
                         </div>
                     </div>
 
-                    <button type="submit" class="btn btn-primary" id="save"> Save </button>
+                    <button type="submit" class="btn btn-outline-dark mt-3" style="width: 100px;" id="save"> Save </button>
                 </form>
             </div>
         </div>

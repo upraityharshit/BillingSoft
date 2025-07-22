@@ -2,7 +2,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 body {
@@ -67,7 +67,7 @@ body {
 
 .text-content p {
   font-size: 14px;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 /* BUBBLES */
@@ -186,8 +186,7 @@ body {
 .btn {
   width: 100%;
   padding: 12px;
-  background: #488ab1;
-  color: white;
+  background: -webkit-linear-gradient(left, #ffffff, #c7d8d2d3, #b2f2cb);
   border: none;
   border-radius: 6px;
   font-size: 15px;
@@ -195,12 +194,13 @@ body {
   font-weight: bold;
   cursor: pointer;
   margin-bottom: 10px;
-  transition: background 0.3s;
+  transition: all 0.5s ease;
 }
 
 .btn:hover {
-  background: #235996;
-  color: white;
+  background: -webkit-linear-gradient(left, #ffffff, #bbbbbb, #b2f2cb);
+  font-weight: bolder;
+  font-size: 17px;
 }
 
 .btn.alt {

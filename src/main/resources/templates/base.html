@@ -22,9 +22,7 @@
 </head>
 <body onload="loadingProcess()">
     <!-- Navbar start -->
-    <nav class="navbar navbar-expand-lg fixed-top bg-primary" data-bs-theme="dark">
-    <!-- style=" background-image: linear-gradient(to right, rgb(89, 89, 247), rgb(166, 160, 248),rgb(89, 89, 247));">
-    linear-gradient(to right, rgb(89, 89, 247), rgb(166, 160, 248),rgb(89, 89, 247)) -->
+    <nav class="navbar navbar-expand-lg fixed-top bg-primary" data-bs-theme="dark" style="z-index: 99999;">
         <div class="container-fluid">
             
           <a class="navbar-brand image" href="#"> <img th:src="@{/images/ebilling2.png}" alt="no_image">
@@ -37,14 +35,23 @@
         </div>
     </nav>
     <!-- Navbar end -->
-     <div class="menu-border"></div>
-     <!-- Navbar2 start -->
-    <nav class="navbar navbar-expand-lg fixed-top" style="top: 60px;">
-        <div class="container-fluid">
-          
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
+    <div class="menu-border"></div>
+
+    <div class="navbar-expand-lg" style="position: fixed; top: 72px; left: 5px; z-index: 99999;">
+        <!-- Desktop Toggle Button (only visible on lg and up) -->
+        <button id="desktopMenuToggle" class="btn btn-outline-dark">
+            <i class="fa fa-bars"></i>
+        </button>
+    </div>  
+
+    <!-- Navbar2 start -->
+    <nav class="navbar navbar-expand-lg fixed-top nav2" id="nav2">
+        <div class="container-fluid" style="margin-left: 45px;">
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"         aria-controls="navbarSupportedContent" aria-expanded="false" 
+                aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+            </button>
 
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
@@ -106,23 +113,12 @@
                             <li><a class="dropdown-item" th:if="${createUser != null and createUser.view}" th:href="@{/dashboard/create_user}">
                                     <i class="fa-solid fa-share"></i> Create User</a>
                             </li>
-                            <!-- <li class="dropdown-submenu">
-                                <a class="dropdown-item dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" th:if="${createUser != null and createUser.view}">
-                                    <i class="fa-solid fa-share"></i> Create User
-                                </a>
-                                <ul class="dropdown-menu" style="background-color: #e3f2fd; margin: -33px 0 0 199px">
-                                    <li><a class="dropdown-item" th:if="${createUser != null and createUser.create}" th:href="@{/dashboard/create_user}">
-                                            <i class="fa-solid fa-share"></i>  New</a></li>
-                                    <li><a class="dropdown-item" th:if="${createUser != null and createUser.edit}" th:href="@{/dashboard/edit_user}">
-                                            <i class="fa-solid fa-share"></i>  Edit</a></li>
-                                </ul>
-                            </li> -->
                         </ul>
                     </li>
                 </ul>
             </div>
         </div>
-      </nav>
+    </nav>
     <!-- Navbar end -->
 
     <div th:insert="${content}">
@@ -147,6 +143,7 @@
     <!-- For Folder Path in tomcat host-->
     <script th:src="@{/js/Ext_script.js}"></script>
     <script th:src="@{/js/create_user.js}"></script>
+    <script th:src="@{/js/navbar.js}"></script>
     
 </body>
 </html>

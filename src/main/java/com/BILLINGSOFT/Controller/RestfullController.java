@@ -12,7 +12,6 @@ import com.BILLINGSOFT.Entity.Permissions;
 import com.BILLINGSOFT.Entity.User;
 import com.BILLINGSOFT.Repository.MenuRepository;
 import com.BILLINGSOFT.Repository.PermissionRepository;
-import com.BILLINGSOFT.Repository.SessionFinyearRepo;
 import com.BILLINGSOFT.Repository.UserRepository;
 
 @RestController
@@ -23,9 +22,6 @@ public class RestfullController {
 
     @Autowired
     private PermissionRepository permissionRepository;
-
-    @Autowired
-    private SessionFinyearRepo sessionfinyearRepo;
     
     @Autowired
     private UserRepository userRepository;
@@ -43,18 +39,11 @@ public class RestfullController {
         return this.permissionRepository.findByUsernameAndMenuGroupAndMenuName(username, menuGroup, menuName);
     }
 
-    // @GetMapping("/dashboard/hsncode/delete/{name}")
-    // public boolean checkdeletion(@PathVariable String name){
-    //     List<Wood> wood = this.woodRepository.findByHsncode(name);
-        
-    //     if("[]".equals(wood.toString()))
-    //         return true;
-    //     else 
-    //         return false;
-        
-    // }
+    @GetMapping("/dashboard/hsncode/delete/{name}")
+    public boolean checkdeletion(@PathVariable String name){
+        return true;
+    }
 
-    
     @GetMapping("/findUser/{username}")
     public User getUserByUsername(@PathVariable String username) {
     	return this.userRepository.findUserByUsername(username);
