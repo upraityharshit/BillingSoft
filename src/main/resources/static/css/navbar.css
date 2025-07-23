@@ -1,6 +1,7 @@
 nav{
     background: linear-gradient(115deg, #9bb3b9, #6AB187);
     font-family: Georgia, 'Times New Roman', Times, serif;
+    height: 50px;
 }
 nav .nav-item a{
   color: white;
@@ -51,4 +52,69 @@ nav .dropdown-item{
   margin-right: 30px;
   color: rgb(227, 235, 250);
   font-style: italic;
+}
+
+.circle-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border: 2px solid #000;
+  border-radius: 50%;
+  background-color: #f0f0f0;
+  cursor: pointer;
+  margin-top: -2px;
+}
+
+.circle-icon i {
+  font-size: 12px;
+  color: #000;
+  margin: 0;
+}
+
+/* Profile Dropdown Menu */
+.profile-container {
+  position: relative;
+  display: inline-block;
+}
+
+.profile-menu {
+  display: none;
+  position: absolute;
+  top: 50px;
+  right: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  width: 200px;
+  z-index: 1000;
+}
+
+.profile-container:hover .profile-menu {
+  display: block;
+}
+
+.profile-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.profile-menu li {
+  padding: 10px;
+  text-align: left;
+}
+
+.profile-menu li a {
+  text-decoration: none;
+  color: #000;
+  display: block;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.profile-menu li:hover {
+  background-color: #f0f0f0;
+  cursor: pointer;
 }

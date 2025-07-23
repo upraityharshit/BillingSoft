@@ -30,14 +30,27 @@
 
           <div class="rightcontent">
             <h4 class="wel">Welcome <span th:text="${displayname}"></span> (<span th:text="${finyear}"></span>)</h4>
-            <a th:href="@{/logout}"><i class="fa-solid fa-right-from-bracket"></i></a>
+            <!-- <a th:href="@{/logout}"><i class="fa-solid fa-right-from-bracket"></i></a> -->
+
+                <div class="profile-container">
+                    <div class="circle-icon" onclick="toggleMenu()">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+                    <div id="profile-menu" class="profile-menu">
+                        <ul>
+                            <li><a href="#"><span th:text="${displayname}"></span></a></li>
+                            <li><a href="#">Change Password</a></li>
+                            <li><a th:href="@{/logout}">Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
           </div>
         </div>
     </nav>
     <!-- Navbar end -->
     <div class="menu-border"></div>
 
-    <div class="navbar-expand-lg" style="position: fixed; top: 72px; left: 5px; z-index: 99999;">
+    <div class="navbar-expand-lg" style="position: fixed; top: 55px; left: 5px; z-index: 99999;">
         <!-- Desktop Toggle Button (only visible on lg and up) -->
         <button id="desktopMenuToggle" class="btn btn-outline-dark">
             <i class="fa fa-bars"></i>
