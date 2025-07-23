@@ -5,8 +5,30 @@
 </head>
 <body>
     <section>
-        <img th:src="@{/images/ebilling.png}" alt="no_image"> 
-        
+        <!-- <img th:src="@{/images/ebilling.png}" alt="no_image">  -->
+      <div class="container">
+
+            <!-- Total Purchase Orders Box -->
+            <div class="row mb-4">
+                <div class="col-md-4">
+                    <div class="card shadow" style="background: linear-gradient(115deg, #9bb3b9d2, #7fbb9a); 
+                                        font-family: Georgia, 'Times New Roman', Times, serif;">
+                        <div class="card-body">
+                            <h5><b>Total Purchase Orders</b></h5>
+                            <h2>126</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Monthly Orders Graph -->
+            <div class="row">
+                <div class="col-md-6">
+                    <canvas id="monthlyChart"></canvas>
+                </div>
+            </div>
+
+        </div>
     </section>
 </body>
 </html>
