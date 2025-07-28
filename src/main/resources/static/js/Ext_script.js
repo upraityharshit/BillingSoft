@@ -92,7 +92,6 @@ function showPermissionBlock(){
 function openPopup(){
     $(".popup").css("visibility", "visible");
     $(".popup").css("transform", "translate(0%, 50%) scale(1)");
-    console.log("hello");
     $(".popup1").css("visibility", "visible");
     $(".popup1").css("transform", "translate(-5%, 50%) scale(1)");
     $(".popup2").css("visibility", "visible");
@@ -240,8 +239,8 @@ function deletefinyear(finid){
      });
  }
 function editfinyear(id,name,fromdate,todate,current,active){
-    $(".popup1").css("visibility", "visible");
-    $(".popup1").css("transform", "translate(0%, 50%) scale(1)");
+    $(".popup").css("visibility", "visible");
+    $(".popup").css("transform", "translate(0%, 50%) scale(1)");
 
     document.getElementById("heading").innerHTML = "<u>EDIT FIN YEAR</u>"; 
     

@@ -7,15 +7,31 @@
     <section>
         <!-- <img th:src="@{/images/ebilling.png}" alt="no_image">  -->
       <div class="container">
-
             <!-- Total Purchase Orders Box -->
             <div class="row mb-4">
                 <div class="col-md-4">
-                    <div class="card shadow" style="background: linear-gradient(115deg, #9bb3b9d2, #7fbb9a); 
-                                        font-family: Georgia, 'Times New Roman', Times, serif;">
+                    <div class="card shadow" style="background: linear-gradient(115deg, #a19ae6d2, #6e8de0);">
                         <div class="card-body">
                             <h5><b>Total Purchase Orders</b></h5>
                             <h2>126</h2>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card shadow" style="background: linear-gradient(115deg, #7cc472d2, #a2d875);">
+                        <div class="card-body">
+                            <h5><b>Total Orders Return</b></h5>
+                            <h2>16</h2>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card shadow" style="background: linear-gradient(115deg, #99d9e9d2, #73bcc9);">
+                        <div class="card-body">
+                            <h5><b>Gross Sale 2024-25</b></h5>
+                            <h2>6.5 Cr.</h2>
                         </div>
                     </div>
                 </div>
@@ -23,8 +39,16 @@
 
             <!-- Monthly Orders Graph -->
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <canvas id="monthlyChart"></canvas>
+                </div>
+
+                <div class="col-md-4">
+                    <canvas id="monthlyChart1"></canvas>
+                </div>
+
+                <div class="col-md-4">
+                    <canvas id="monthlyChart2"></canvas>
                 </div>
             </div>
 

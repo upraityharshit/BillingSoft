@@ -1,7 +1,6 @@
 body {
 	min-height: 100vh;
 	padding: 10px;
-	font-family: Georgia, 'Times New Roman', Times, serif;
 	background: linear-gradient(115deg, #F1F1FF , #ffffff);
 }
 section{
@@ -48,6 +47,9 @@ section{
 hr{
     margin: 0 0 5px 0;
 }
+input{
+	font-family: 'Times New Roman', Times, serif !important;
+}
 /*Popup window for save new */
 .popup{
 	width: 500px;
@@ -89,38 +91,9 @@ hr{
 	margin-top: 20px;
 	color: black;
 }
-/* Item Master form CSS code end
-.popup1{
-	width: 500px;
-	height: auto;
-	color: black;
-	border: 5px groove gray;
-	border-radius: 20px;
-	font-family: Georgia, 'Times New Roman', Times, serif;
-	position: absolute;
-	top: -100px;
-	left: 30%;
-	font-weight: bold;
-	background: linear-gradient(115deg, #c4c8c9f3, #8ad3b7e5);
-	padding: 20px;
-	visibility: hidden;
-	text-align: center;
-	transform: scale(0.1);
-	transition: transform 0.5s;
-	z-index: 99999;
+.card{
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
-.popup1 .button{
-	text-align: center;
-}
-.popup1 h3{
-	text-align: center;
-	margin-top: -10px;
-	font-weight: bold;
-	font-family: Georgia, 'Times New Roman', Times, serif;
-}
-.popup1 .cross{
-	text-align: end;
-} */
 /* Estimate page style */
 .container3{
 	height: 77vh;

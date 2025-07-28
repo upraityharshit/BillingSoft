@@ -10,13 +10,14 @@ nav .nav-item a{
   color: rgba(0, 0, 0, 0.75);
 }
 nav .dropdown-item{
-  background: linear-gradient(115deg, #6c8085, #6AB187);
+  background: linear-gradient(115deg, #abc1c7de, #a8dabde1);
 }
 .nav-item a:hover{
   font-weight: bold;
   background: linear-gradient(to left, #d0dbd2, #e7f1ec);
 }
 .nav2{
+  margin-top: 50px;
   transition: all 0.5s ease;
 }
 .image img{
