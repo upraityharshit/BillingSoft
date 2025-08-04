@@ -320,7 +320,8 @@ function savefinyear(){
     });
 
     let finname = document.getElementById("finyear").value;
-    console.log("Finyear is:" + finname);
+    // console.log("Finyear is:" + finname);
+    
     $.ajax({
         url: contextPath +"/save_finyear/"+finname,
         method: "GET",
@@ -332,7 +333,6 @@ function savefinyear(){
         }
     });
 }
-
 
 function isNumber(input) {
     const regex = /^-?\d+(\.\d+)?(e-?\d+)?$/i;
